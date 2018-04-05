@@ -149,6 +149,8 @@ AWS = {
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
                  '192.168.99.100']
+
+DJANGO_SECRET_KEY = 'some generated key'
 ```
 
 * To run local services that reference the remote live database, Hack Oregon credential are required. This is usually the pattern required for incremental changes to the data loaded into the database tables or to run migrations on the live deployment. Obtain `project_config.py` from your DevOps contact. Place the file at: `housing-backend/backend/backend` (in the same directory as `settings.py`)
