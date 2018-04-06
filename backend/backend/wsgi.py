@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
+
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
 from psycogreen.gevent import patch_psycopg
@@ -18,7 +20,6 @@ patch_psycopg()
 
 from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "backend.settings")
 
 application = Cling(get_wsgi_application())
 
