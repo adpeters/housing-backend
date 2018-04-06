@@ -1,7 +1,6 @@
 import pandas as pd
+from .jchs_data_2017 import load_data as loadJCHSData
 from .models import *
-
-
 
 def loadAffordability(file):
     df = pd.read_csv(file)
@@ -179,11 +178,11 @@ fileSupply = "https://raw.githubusercontent.com/hackoregon/housing-backend/datas
 fileHHToolTips = "https://raw.githubusercontent.com/hackoregon/housing-backend/datasources/hhToolTips.csv"
 filePopToolTips = "https://raw.githubusercontent.com/hackoregon/housing-backend/datasources/popToolTips.csv"
 fileProdVsCost = "https://raw.githubusercontent.com/hackoregon/housing-backend/datasources/HousingStockandPrices.csv"
+fileJCHSData2017 = "http://www.jchs.harvard.edu/sites/jchs.harvard.edu/files/all_son_2017_tables_current_6_12_17.xlsx"
 
 # Load year and neighborhood first because loadAffordability depends on it
 loadDemoByYear(fileDemo)
 loadNeighborhoodProfiles(fileNeighborhoods)
-
 
 loadAffordability(fileAfford)
 loadNeighborhoodRent(fileRent)
@@ -191,3 +190,4 @@ loadHousingSupplyandPermits(fileSupply)
 loadHHToolTip(fileHHToolTips)
 loadPopToolTip(filePopToolTips)
 loadProdVsCost(fileProdVsCost)
+loadJCHSData(fileJCHSData2017)
